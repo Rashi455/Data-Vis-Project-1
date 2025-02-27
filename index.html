@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Activity Levels and Heart Disease Levels Across US Counties</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>   
+    <h1 style="text-align: center;">Activity Levels and Cardiovascular Disease Across US Counties</h1> 
+    <h4 style="text-align: center;">Rashi Loni</h4> 
+    <h6 style="text-align: center;">
+        <a href="https://rashiloni.wixsite.com/website" target="_blank">Documentation</a>
+    </h6>
+
+    <div id="dashboard">
+
+        <div id="controls">
+            <div id="attributeLabel">Choose a Cardiovascular Disease:</div>
+            <select id="attribute-select">
+                <option value="percent_coronary_heart_disease" selected>Coronary Heart Disease</option>
+                <option value="percent_high_cholesterol">High Cholesterol</option>
+                <option value="percent_stroke">Stroke</option>
+            </select>
+
+            <div id="statusLabel">Choose a Type of County:</div>
+            <ul class="legend">
+                <li class="legend-btn" category="All"><span class="legend-symbol"></span> All</li>
+                <li class="legend-btn" category="Rural"><span class="legend-symbol"></span> Rural</li>
+                <li class="legend-btn" category="Suburban"><span class="legend-symbol"></span> Suburban</li>
+                <li class="legend-btn" category="Small City"><span class="legend-symbol"></span> Small City</li>
+                <li class="legend-btn" category="Urban"><span class="legend-symbol"></span> Urban</li>
+            </ul>
+
+            <div id="button-container">
+                <button id="reset-button">Reset All Filters</button>
+            </div>
+        </div>
+        <!-- Maps -->
+        <div class="visualization" id="map-container">
+            <div id="mapLabel">Physical Inactivity Levels</div>
+            <div id="map"></div>
+            
+        </div>
+
+        <div class="visualization" id="map2-container">
+            <div id="mapLabel2">Cardivascular Disease Levels</div>
+            <div id="map2"></div>
+            
+        </div>
+
+        <div id="directions-container">
+            <h3>Directions</h3>
+            <p>Explore the relationship between a lifestyle choice of physical activity and indicators of cardiovascular disease.</p>
+            <ul>
+              <li>Select a health attribute from dropdown</li>
+              <li>Choose a type of county to filter</li>
+              <li>Drag accros the barcharts and scatterplot to select an area and then press the filter button that appears</li>
+              <li>Press rest all filters to reset any selections</li>
+              <li>Hover over counties on the maps, bars on the bar charts, and dots on the scatterplot to see specific info</li>
+            </ul>
+            <p>*Data provided by the CDC US Heart and Stroke Atlas</p>
+          </div>
+
+        <!-- Scatterplot -->
+        <div class="visualization" id="scatterplot-container">
+            <button id="filter-button">Filter</button>
+
+            <svg id="scatterplot"></svg>
+        </div>
+
+        <!-- Health Bar Chart -->
+        <div class="visualization" id="healthBarChart-container">
+            <button id="histfilter-button2">Filter</button>
+            <svg id="healthBarChart"></svg>
+        </div>
+
+        <!-- Histogram -->
+        <div class="visualization" id="histogram-container">
+            <button id="histfilter-button">Filter Histogram</button>
+            <svg id="histogram"></svg>
+        </div>
+
+        <!-- Dropdown and Filters -->
+        
+    </div>
+
+    <div id="tooltip"></div>
+
+    <!-- D3 Bundle -->
+    <script src="js/d3.v6.min.js"></script>
+    <script src="js/topojson.v3.js"></script>
+    <script src="js/choroplethMap.js"></script>
+    <script src="js/choroplethMap2.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/histogram.js"></script> 
+    <script src="js/healthBarChart.js"></script> 
+    <script src="js/scatterplot.js"></script> 
+
+</body>
+</html>
